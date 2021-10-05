@@ -4,8 +4,7 @@ import datetime as dt
 
 # Create your views here.
 def welcome(request):
-    return HttpResponse('Welcome to the Moringa Tribune')
-    # return render(request, 'welcome.html')
+    return render(request, 'welcome.html')
 
 def news_of_day(request):
     date = dt.date.today()
@@ -27,3 +26,4 @@ def past_days_news(request,past_date):
         return redirect(news_of_day)
 
     return render(request, 'all-news/past-news.html', {"date":date})
+    
